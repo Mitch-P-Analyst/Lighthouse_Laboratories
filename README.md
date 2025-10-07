@@ -18,3 +18,7 @@ Best of luck on your data journey. Feel free to modify this material to improve 
 - `04_Data_Wrangling` – Merging, reshaping, transforming data
 - `05_Data_Statistical_Modeling` – Statistical inference & hypothesis testing
 - `06_Machine_Learning` – Supervised ML models (intro)
+
+## Google Doc Notes
+
+- [Lighthouse Laboratory Notes](https://docs.google.com/document/d/1tqX3bMljwRmpddogM87PJY8cHtXFHhAZnRzeSQIqXlk/edit?usp=sharing)
