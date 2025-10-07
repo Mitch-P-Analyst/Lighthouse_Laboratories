@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Housing Price Predictor</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+            --input-background: #fff;
+            --input-border: #bdc3c7;
+            --input-focus: #3498db;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        form {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid var(--input-border);
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--input-focus);
+        }
+
+        button {
+            grid-column: 1 / -1;
+            padding: 12px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container animate-in">
+        <h1>California Housing Price Predictor</h1>
+        <form action="{{ url_for('predict') }}" method="get">
+            <div class="form-group">
+                <label for="MedInc">Median Income:</label>
+                <input type="number" step="0.1" name="MedInc" id="MedInc" required>
+            </div>
+            <div class="form-group">
+                <label for="HouseAge">House Age:</label>
+                <input type="number" step="0.1" name="HouseAge" id="HouseAge" required>
+            </div>
+            <div class="form-group">
+                <label for="AveRooms">Average Rooms:</label>
+                <input type="number" step="0.1" name="AveRooms" id="AveRooms" required>
+            </div>
+            <div class="form-group">
+                <label for="AveBedrms">Average Bedrooms:</label>
+                <input type="number" step="0.1" name="AveBedrms" id="AveBedrms" required>
+            </div>
+            <div class="form-group">
+                <label for="Population">Population:</label>
+                <input type="number" step="1" name="Population" id="Population" required>
+            </div>
+            <div class="form-group">
+                <label for="AveOccup">Average Occupancy:</label>
+                <input type="number" step="0.1" name="AveOccup" id="AveOccup" required>
+            </div>
+            <div class="form-group">
+                <label for="Latitude">Latitude:</label>
+                <input type="number" step="0.000001" name="Latitude" id="Latitude" required>
+            </div>
+            <div class="form-group">
+                <label for="Longitude">Longitude:</label>
+                <input type="number" step="0.000001" name="Longitude" id="Longitude" required>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

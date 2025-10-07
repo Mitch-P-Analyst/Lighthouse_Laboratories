@@ -1,0 +1,80 @@
+{
+    "chart": {
+        "result": [
+            {
+                "meta": {
+                    "currency": "USD",
+                    "symbol": "CLYAF",
+                    "exchangeName": "PNK",
+                    "instrumentType": "EQUITY",
+                    "firstTradeDate": null,
+                    "regularMarketTime": 1624476351,
+                    "gmtoffset": -14400,
+                    "timezone": "EDT",
+                    "exchangeTimezoneName": "America/New_York",
+                    "regularMarketPrice": 45.0852,
+                    "chartPreviousClose": 45.0852,
+                    "priceHint": 2,
+                    "currentTradingPeriod": {
+                        "pre": {
+                            "timezone": "EDT",
+                            "start": 1626076800,
+                            "end": 1626096600,
+                            "gmtoffset": -14400
+                        },
+                        "regular": {
+                            "timezone": "EDT",
+                            "start": 1626096600,
+                            "end": 1626120000,
+                            "gmtoffset": -14400
+                        },
+                        "post": {
+                            "timezone": "EDT",
+                            "start": 1626120000,
+                            "end": 1626134400,
+                            "gmtoffset": -14400
+                        }
+                    },
+                    "dataGranularity": "1d",
+                    "range": "",
+                    "validRanges": [
+                        "1d",
+                        "5d"
+                    ]
+                },
+                "timestamp": [
+                    1624476351
+                ],
+                "indicators": {
+                    "quote": [
+                        {
+                            "close": [
+                                45.085201263427734
+                            ],
+                            "low": [
+                                45.085201263427734
+                            ],
+                            "high": [
+                                45.085201263427734
+                            ],
+                            "volume": [
+                                340
+                            ],
+                            "open": [
+                                45.10139846801758
+                            ]
+                        }
+                    ],
+                    "adjclose": [
+                        {
+                            "adjclose": [
+                                45.085201263427734
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "error": null
+    }
+}

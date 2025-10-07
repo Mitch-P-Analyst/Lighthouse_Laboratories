@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Price Prediction Result</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+            --card-background: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .result-container {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .prediction {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 20px 0;
+        }
+
+        .input-summary {
+            background-color: var(--background-color);
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .input-summary h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .input-summary p {
+            margin: 5px 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+
+        .animate-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container animate-in">
+        <h1>Housing Price Prediction</h1>
+        <div class="prediction">
+            Predicted Price: ${{ prediction|round(2) }}
+        </div>
+        <div class="input-summary">
+            <h2>Input Summary:</h2>
+            <p>Median Income: {{ inputs.MedInc }}</p>
+            <p>House Age: {{ inputs.HouseAge }}</p>
+            <p>Average Rooms: {{ inputs.AveRooms }}</p>
+            <p>Average Bedrooms: {{ inputs.AveBedrms }}</p>
+            <p>Population: {{ inputs.Population }}</p>
+            <p>Average Occupancy: {{ inputs.AveOccup }}</p>
+            <p>Latitude: {{ inputs.Latitude }}</p>
+            <p>Longitude: {{ inputs.Longitude }}</p>
+        </div>
+        <a href="{{ url_for('index') }}" class="back-button">Make Another Prediction</a>
+    </div>
+</body>
+</html>
